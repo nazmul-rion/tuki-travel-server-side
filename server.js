@@ -45,14 +45,14 @@ async function run() {
 
         // add package API
         app.post('/addpackages', async (req, res) => {
-            await packageCollection.insertOne(req.body);
-            res.send('package added');
+            const result = await packageCollection.insertOne(req.body);
+            res.json(result);
         });
 
         // add Order API
         app.post('/addorder', async (req, res) => {
-            await orderCollection.insertOne(req.body);
-            res.send('order added');
+            const result = await orderCollection.insertOne(req.body);
+            res.json(result);
         });
 
 
